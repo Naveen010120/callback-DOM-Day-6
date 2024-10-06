@@ -1,0 +1,47 @@
+<!-- // Task 17: Custom Logging System
+// Scenario: You want to create a custom logging system where different log levels (e.g., info, error) print different messages.
+// •	Write a function that accepts a log message and a callback function.
+// •	The callback should determine how to log the message based on the level (e.g., error messages in red and info messages in green). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        #text{
+            font-size: 2rem;
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    <p id="text"></p>
+    <script>
+        let text=document.getElementById('text')
+        function customLogging(n1,n2,callback){
+            callback(n1,n2);
+        }
+
+        input=prompt("enter a message:"),log=prompt("if you want print in green type 'green' else type 'red':" );
+        customLogging(input,log,(firstInput,secInput)=>{
+            if(secInput=="green"||secInput=="Green"){
+                text.style.color="green";
+                text.innerHTML=firstInput;
+            }else if(secInput=="red"||secInput=="Red"){
+                text.style.color="red";
+                text.innerHTML=firstInput;
+            } else {
+                text.innerHTML="enter valided color"
+            }
+        })
+    </script>
+</body>
+</html>

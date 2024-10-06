@@ -1,0 +1,33 @@
+<!-- // Task 4: Event Listener with Callback
+// Scenario: You want to trigger different actions when a button is clicked.
+// •	Write a function that accepts a button element and a callback function.
+// •	The callback should define what happens when the button is clicked (e.g., showing a message or changing the background color). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+       
+    </style>
+</head>
+<body id="body">
+    
+    <script>
+        let button=document.createElement('button');
+        button.innerHTML="click here"
+        function actionFunction(action,callback){
+            callback(action);
+        }
+        let body=document.getElementById('body')
+        //function calling
+        actionFunction(button,(button)=>{
+            button.addEventListener('click',()=>body.style.background="black")
+        });
+
+        document.body.appendChild(button);
+    
+    </script>
+</body>
+</html>

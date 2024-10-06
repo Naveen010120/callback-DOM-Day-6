@@ -1,0 +1,47 @@
+<!-- Task 13: Animation with Callback
+Scenario: You want to run an animation, and once it finishes, trigger another action.
+•	Write a function that simulates an animation and takes a callback.
+•	Once the animation is done, the callback should execute (e.g., showing a message or changing a color). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        div{
+            width:100px;
+            height: 100px;
+            background-color: orange;
+            border-radius: 50%;
+            animation: animation 4.5s ease-in-out;
+            transition: all 5s ease-in-out;
+        }
+      @keyframes animation{
+        25%{
+          transform: translate(50vw);
+        }
+        50%{
+            transform: translate(50vw,30vw);
+        }
+        75%{
+            transform: translate(-2vw,30vw);
+        }
+        100%{
+           transform: translate(0);
+        }
+      }
+     
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        let container=document.getElementById('container')
+        function animation(callback){
+            callback();
+        }
+        animation(()=>setTimeout(()=>container.style.backgroundColor="black",3500))
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!-- Task 11: Logging Actions with a Callback
+Scenario: You want to log actions like button clicks or form submissions.
+•	Write a function that accepts an action and a callback.
+•	The callback should log the action (e.g., “Button clicked” or “Form submitted”). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            display: block;
+            margin: 10px;
+            height: 4vh;
+            border-radius: 5px;
+            background-color: grey;
+        }
+        label{
+            font-size: 1.4rem;
+            letter-spacing: 10px;
+            font-weight: 800;
+        }
+        button{
+            font-size: 1.3rem;
+            background-color: rgb(129, 129, 168);
+            border-radius: 5px;
+            width: 20vw;
+            height: 7vh;
+            margin-left: 4vw;
+
+        }
+        button:hover{
+            background-color: brown;
+        }
+        form{
+            background: linear-gradient(orange,pink,grey);
+            width: 40vw;
+            border-radius: 10px;
+            padding: 30px;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+            background: radial-gradient(chocolate,black,red);
+        }
+    </style>
+</head>
+<body>
+    <form >
+        <label for="username">UserName:</label>
+        <input type="text"  id="username" pattern="+[a-zA-Z]{8,15}" required>
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" required>
+        <button id="submit">Submit</button>
+    </form>
+    <script>
+        let submit=document.getElementById('submit');
+        function loggingAction(button,callback){
+            callback(button)
+        }
+        function processAction(btn){
+            submit.addEventListener('click',(clickBtn)=>alert("your details are submitted successfully..😊😊"))
+        }
+        loggingAction(submit,processAction)
+    </script>
+</body>
+</html>
