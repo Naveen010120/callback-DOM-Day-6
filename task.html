@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .images{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button id="click">click heree</button>
+    <script>
+        document.getElementById('click').addEventListener('click',function(){
+            fetch("https://fakestoreapi.com/products").then(Response=>Response.json()).then(data=>{
+         
+                data.forEach(element => {
+                    let p=document.createElement('p');
+                    p.innerHTML=element.id;
+                    document.body.append(p)
+                });
+                
+            })
+        })
+    </script>
+</body>
+</html>
